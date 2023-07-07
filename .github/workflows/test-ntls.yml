@@ -2,9 +2,9 @@ name: test tengine ntls
 
 on:
   push:
-    branches: [ master ]
+    branches: [ longsight ]
   pull_request:
-    branches: [ master ]
+    branches: [ longsight ]
 
 jobs:
   build-and-test:
