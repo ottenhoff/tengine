@@ -8,19 +8,18 @@ else
   ecflag=""
 fi
 
-version_pcre=pcre-8.45
-version_zlib=zlib-1.2.13
-version_openssl=openssl
-bpath=/home/ubuntu/dev/tengine/build
+version_pcre=/home/ubuntu/dev/pcre-8.45
+version_zlib=/home/ubuntu/dev/zlib-1.2.13
+version_openssl=/home/ubuntu/dev/openssl
 
 ./configure \
   --prefix=/etc/nginx \
   --with-cc-opt="-O3 -fPIE -fstack-protector-strong -Wformat -Werror=format-security" \
   --with-ld-opt="-Wl,-Bsymbolic-functions -Wl,-z,relro" \
-  --with-pcre="$bpath/$version_pcre" \
-  --with-zlib="$bpath/$version_zlib" \
+  --with-pcre="$version_pcre" \
+  --with-zlib="$version_zlib" \
   --with-openssl-opt="no-weak-ssl-ciphers no-ssl3 no-shared $ecflag -DOPENSSL_NO_HEARTBEATS -fstack-protector-strong" \
-  --with-openssl="$bpath/$version_openssl" \
+  --with-openssl="$version_openssl" \
   --sbin-path=/usr/sbin/nginx \
   --modules-path=/usr/lib/nginx/modules \
   --conf-path=/etc/nginx/nginx.conf \
