@@ -2,12 +2,12 @@ name: build tengine
 
 on:
   push:
-    branches: [ master ]
+    branches: [ longsight ]
   pull_request:
 
 jobs:
   build-arm64:
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-22.04"
     strategy:
       fail-fast: false
       matrix:

@@ -2,9 +2,9 @@ name: test nginx core
 
 on:
   push:
-    branches: [ master ]
+    branches: [ longsight ]
   pull_request:
-    branches: [ master ]
+    branches: [ longsight ]
 
 jobs:
   build-and-test:
