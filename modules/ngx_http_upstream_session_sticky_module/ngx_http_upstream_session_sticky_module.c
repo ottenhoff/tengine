@@ -955,7 +955,8 @@ ngx_http_session_sticky_insert(ngx_http_request_t *r)
                           + sizeof("; Domain=") - 1
                           + ctx->sscf->domain.len
                           + sizeof("; Path=") - 1
-                          + ctx->sscf->path.len;
+                          + ctx->sscf->path.len
+                          + sizeof("; SameSite=None; Secure");
 
     if (ctx->sscf->maxidle != NGX_CONF_UNSET) {
         set_cookie->value.len = set_cookie->value.len
@@ -994,6 +995,7 @@ ngx_http_session_sticky_insert(ngx_http_request_t *r)
         p = ngx_cpymem(p, "; Path=", sizeof("; Path=") - 1);
         p = ngx_cpymem(p, ctx->sscf->path.data, ctx->sscf->path.len);
     }
+    p = ngx_cpymem(p, "; SameSite=None; Secure", sizeof(";SameSite=None; Secure"));
     if (ctx->sscf->maxidle == NGX_CONF_UNSET && ctx->sscf->maxage.len) {
         p = ngx_cpymem(p, "; Max-Age=", sizeof("; Max-Age=") - 1);
         p = ngx_cpymem(p, ctx->sscf->maxage.data, ctx->sscf->maxage.len);
