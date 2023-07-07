@@ -13,7 +13,7 @@
 #define NGINX_VERSION      "1.24.0"
 #define NGINX_VER          "nginx/" NGINX_VERSION
 
-#define TENGINE            "Tengine"
+#define TENGINE            "Longsight"
 #define tengine_version    3000000
 #define TENGINE_VERSION    "3.0.0"
 #define TENGINE_VER        TENGINE "/" TENGINE_VERSION
